@@ -2,31 +2,34 @@ import React, {useState} from 'react'
 
 export const FormElements = () => {
 
-    const[name,setName]=useState('')
-    const[car,setCar]=useState('Mercedes')
-    const handleChangeName=(e)=>{
-        setName(e.target.value)
+    const[form,setForm]=useState({"name":"","age":"","course":""})
+   
+    const handlFormChange=(e)=>{
+        if(e.target.getAttribute('name')==='name'){
+            setForm({"name":e.target.value,"age":form.age,"course":form.course})
+        }
+        else if(e.target.getAttribute('name')==='age'){
+            setForm({"name":form.name,"age":e.target.value,"course":form.course})
+        }
+        else if(e.target.getAttribute('name')==='course'){
+            setForm({"name":form.name,"age":form.age,"course":e.target.value})
+        }
     }
+
     return (
         <div>
-            <label>Enter your name</label>
-            <input 
-                type="text" 
-                name="name"
-                value={name}
-                onChange={(e)=>handleChangeName(e)}
-            />
-           <p>Name: {name}</p> 
+            <label>Name</label>
+            <input  type="text"  name="name"value={form.name} onChange={(e)=>handlFormChange(e)}/>
+            <label>Age</label>
+            <input  type="text"  name="age"value={form.age} onChange={(e)=>handlFormChange(e)}/>
+            <label>Course</label>
+            <input  type="text"  name="course"value={form.course} onChange={(e)=>handlFormChange(e)}/>
+           
+           
+            <p>Name: {form.name}</p> 
+            <p>Age: {form.age}</p> 
+            <p>Course: {form.course}</p> 
 
-           <label>Select car</label>
-           <select value={car} onChange={(e)=>setCar(e.target.value)}>
-            <option value='Mercedes'>Mercedes</option>
-            <option value='BMW'>BMW</option>
-            <option value='Audi'>Audi</option>
-            <option value='Range Rover'>Range Rover</option>
-           </select>
-
-            <p>Selected Car: {car}</p>
         </div>
     )
 }

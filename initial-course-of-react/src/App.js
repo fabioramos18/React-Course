@@ -3,8 +3,7 @@ import { ListMAP } from './components/ListMAP'
 import { FormElements } from './components/FormElements'
 import { HookUseEffect } from './components/HookUseEffect'
 import './App.css'
-import { useEffect } from 'react/cjs/react.development'
-
+import { LocalStorage } from './components/LocalStorage'
 const App = () => {
   
   return (
@@ -13,6 +12,7 @@ const App = () => {
       <ListMAP/>
       <FormElements/>
       <HookUseEffect/>
+      <LocalStorage/>
     </div>
   )
 }

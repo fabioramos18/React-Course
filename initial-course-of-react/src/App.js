@@ -5,6 +5,7 @@ import { HookUseEffect } from './components/HookUseEffect'
 import './App.css'
 import { LocalStorage } from './components/LocalStorage'
 import ClassComponents from './components/ClassComponets'
+import StateInClassComponents from './components/StateInClassComponents'
 const App = () => {
   
   return (
@@ -17,6 +18,7 @@ const App = () => {
       
       <h1>Class Components</h1>
       <ClassComponents canal="Youtube" course="React"/>
+      <StateInClassComponents/>
     </div>
   )
 }

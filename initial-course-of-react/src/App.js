@@ -18,7 +18,7 @@ const App = () => {
       
       <h1>Class Components</h1>
       <ClassComponents canal="Youtube" course="React"/>
-      <StateInClassComponents/>
+      <StateInClassComponents fator={1}/>
     </div>
   )
 }
